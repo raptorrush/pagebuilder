@@ -1,0 +1,38 @@
+{
+  "creeperbar": {
+    "show_sitewide_creeper": true,
+    "text": "20% Off Your Next Order!",
+    "link": "/sales",
+    "styles": {
+      "class_alignment": "Right",
+      "backgroundColor_nav": "Teal",
+      "color_nav": "White"
+    }
+  },
+  "theme": "Light",
+  "logo": "/img/vue-logo.png",
+  "name": "Steve Shannon Productions",
+  "phone": "208-555-5555",
+  "address_line_1": "Boise, ID",
+  "address_line_2": "",
+  "footer": {
+    "show_site_links": true,
+    "show_social": true,
+    "styles": {
+      "backgroundColor_footer": "Dark Orange",
+      "color_footer": "White"
+    }
+  },
+  "email": "steve@steveshannonproductions.com",
+  "options": {
+    "nav": {
+      "hamburger": false,
+      "show_name": true,
+      "show_logo": false,
+      "styles": {
+        "background-color": "Light Orange",
+        "color": "Light Text Color"
+      }
+    }
+  }
+}

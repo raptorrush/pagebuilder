@@ -20,7 +20,8 @@
     {
       "type": "spacer",
       "styles": {
-        "class_height": "Medium"
+        "class_height": "Medium",
+        "backgroundColor_line": "Dark Text Color"
       }
     },
     {
@@ -52,7 +53,7 @@
         "backgroundColor_container": "Teal",
         "color_cards": "Dark Text Color",
         "backgroundColor_cards": "White",
-        "backgroundColor_button": "Dark Orange",
+        "backgroundColor_button": "Orange - Dark",
         "color_button": "White",
         "attribute_shaped": true
       },

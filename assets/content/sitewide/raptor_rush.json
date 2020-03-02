@@ -19,8 +19,8 @@
     "link": "/sales",
     "styles": {
       "class_alignment": "Center",
-      "backgroundColor_bar": "Dark Orange",
-      "color_bar": "White"
+      "backgroundColor_bar": "White",
+      "color_bar": "Black"
     }
   },
   "email": "steve@steveshannonproductions.com",

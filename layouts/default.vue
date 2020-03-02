@@ -18,8 +18,7 @@
                     <div v-if="sitewide.options.nav.show_logo" class="app__bar__logo__container">
                         <img :src="sitewide.logo" :alt="sitewide.name + ' Logo'" class="app__bar__logo">
                     </div>
-                    <v-toolbar-title v-if="sitewide.options.nav.show_name">
-                        {{ sitewide.name }}
+                    <v-toolbar-title v-if="sitewide.options.nav.show_name" v-html="sitewide.short_name">
                     </v-toolbar-title>
                 </div>
                 <ul class="nav__links__no-hambuger" v-if="!sitewide.options.nav.hamburger">
@@ -67,22 +66,12 @@ export default {
     methods: {
         persistentbarStyles: function (sitewide, navbar) {
             let colorObj = this.setColors(sitewide.persistentbar);
-            // console.log(sitewide);
-            // console.log(colorObj);
-            console.log(sitewide);
             let styles = this.sitewide.persistentbar.parsedStyles.bar;
-            console.log(styles);
             let theme = {
                 width: "100%",
                 position: "fixed",
                 top: "0"
             };
-            // for (let i in persistentbarTheme) {
-            //     let item = persistentbarTheme[i];
-            //     if (i !== 'type') {
-            //         theme[i] = item;
-            //     }
-            // }
             if (navbar) {
                 theme.top = navbar.styles.height;
             }

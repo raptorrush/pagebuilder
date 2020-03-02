@@ -45,6 +45,8 @@ function setStyles(data, colors) {
             if (elem in widg.parsedStyles) {
                 widg.parsedStyles[elem][style] = colors[styles[s]].code;
             } else if (elem) {
+                console.log(elem);
+                console.log(styles[s]);
                 widg.parsedStyles[elem] = {};
                 // console.log(styles[s])
                 widg.parsedStyles[elem][style] = colors[styles[s]].code;
@@ -86,11 +88,9 @@ export const mutations = {
         // console.log(data);
     },
     setPages(state, data) {
-        let themes = state.themes;
         let sitewide = state.sitewide;
         for (var p in data) {
             let page = data[p];
-            
             let name = page.name;
             state.pages[name] = page;
             state.pages[name].pagewidgets = {};
@@ -106,19 +106,6 @@ export const mutations = {
                 if (widget.styles) {
                     widget2 = setStyles(widget, state.colors);
                 }
-                // if (widget.substyles) {
-                //     for (let s in widget.substyles) {
-                //         let styleblock = s;
-                //         for (let st in widget.substyles[s].styles) {
-                //             let style = st;
-                //             let choosen = widget.substyles[s].styles[st].toLowerCase();
-                //             subClasses.push(type + "--" + style + "--" + choosen);
-                //         }
-                //     }
-                // }
-
-                // widget.subClasses = subClasses;
-
                 //KEEP BELOW - CHANGES NAME OF COMPONENT TO VUE STYLE NAME
                 let componentName = widget2.type.split(" ");
                 for (let i = 0; i < componentName.length; i++) {

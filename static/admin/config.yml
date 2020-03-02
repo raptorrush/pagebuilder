@@ -18,21 +18,13 @@ collections:
       preview: false
     fields:
       - { label: 'Company Name', name: 'name', widget: 'string' }
+      - { label: 'Shortened Company Name', name: 'short_name', widget: 'string', required: false }
       - { label: 'Logo', name: 'logo', widget: 'image', required: false }
       - { label: 'Address Line 1', name: 'address_line_1', widget: 'string', required: false }
       - { label: 'Address Line 2', name: 'address_line_2', widget: 'string', required: false }
       - { label: 'Address Line 3', name: 'address_line_3', widget: 'string', required: false }
       - { label: 'Contact Phone Number', name: 'phone', widget: 'string', required: false }
       - { label: 'Contact Email Address', name: 'email', widget: 'string', required: false }
-      - label: "Theme"
-        name: "theme"
-        hint: "Which Theme Should Be Default For The Site? (See Documentation)"
-        widget: "relation"
-        collection: "themes"
-        searchFields: ["name"]
-        valueField: "name"
-        displayFields: ["name"]
-        default: "light"
       - label: "Sitewide Options"
         name: "options"
         widget: object

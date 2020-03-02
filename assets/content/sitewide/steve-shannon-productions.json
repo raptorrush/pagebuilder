@@ -23,6 +23,16 @@
       "color_footer": "White"
     }
   },
+  "persistentbar": {
+    "show_sitewide_persistent_bar": true,
+    "text": "Save 20% Now!",
+    "link": "/sales",
+    "styles": {
+      "class_alignment": "Center",
+      "backgroundColor_bar": "Dark Orange",
+      "color_bar": "White"
+    }
+  },
   "email": "steve@steveshannonproductions.com",
   "options": {
     "nav": {

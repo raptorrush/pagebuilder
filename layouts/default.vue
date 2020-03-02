@@ -31,7 +31,7 @@
                 <v-app-bar-nav-icon :class="{'nav__hamburger__hide' : !this.hamburgerHide}" v-bind="vtheme.button" right @click.stop="drawer = !drawer"/>
             </div>
         </v-app-bar>
-        <Creeperbar v-if="sitewide.creeperbar.show_sitewide_creeper" :datas="sitewide.creeperbar" ref="creeper" :style="inlineStyles(themes, sitewide, this.$refs.navbar)" class="sitewide__creeper"/>
+        <Persistentbar v-if="sitewide.persistentbar.show_sitewide_persistent_bar" :datas="sitewide.persistentbar" ref="persistentbar" :style="persistentbarStyles(sitewide, this.$refs.navbar)" class="sitewide__persistentbar"/>
         <v-content :style="{'paddingTop': paddingMain}">
             <v-container>
                 <nuxt/>
@@ -42,13 +42,12 @@
 </template>
 
 <script>
-//:style="creeperThemed(themes, sitewide, this.$refs.navbar)"
-import Creeperbar from '~/components/Creeperbar.vue';
+import Persistentbar from '~/components/Persistentbar.vue';
 import Footer from '~/components/Footer.vue';
 
 export default {
     components: {
-        Creeperbar,
+        Persistentbar,
         Footer
     },
     computed: {
@@ -61,43 +60,42 @@ export default {
         nav: function () {
             return this.$store.state.nav
         },
-        themes: function () {
-            return this.$store.state.themes
-        },
         colors: function () {
             return this.$store.state.colors
         } 
     },
     methods: {
-        inlineStyles: function (themes, sitewide, navbar) {
-            let colorObj = this.setColors(sitewide.creeperbar);
+        persistentbarStyles: function (sitewide, navbar) {
+            let colorObj = this.setColors(sitewide.persistentbar);
             // console.log(sitewide);
             // console.log(colorObj);
-
-            let creeperTheme = themes[sitewide.theme.toLowerCase()].segments["creeperbar"];
+            console.log(sitewide);
+            let styles = this.sitewide.persistentbar.parsedStyles.bar;
+            console.log(styles);
             let theme = {
                 width: "100%",
                 position: "fixed",
                 top: "0"
             };
-            for (let i in creeperTheme) {
-                let item = creeperTheme[i];
-                if (i !== 'type') {
-                    theme[i] = item;
-                }
-            }
+            // for (let i in persistentbarTheme) {
+            //     let item = persistentbarTheme[i];
+            //     if (i !== 'type') {
+            //         theme[i] = item;
+            //     }
+            // }
             if (navbar) {
                 theme.top = navbar.styles.height;
             }
-            return theme;
+            var newObj = {...styles, ...theme};
+            return newObj;
         },
         mainPadding: function () {
             let paddingTop = 0;
             if (this.$refs.navbar) {
                 this.paddingMain = parseInt(this.$refs.navbar.$el.style.height.replace("px", ""));
             }
-            if (this.$refs.creeper) {
-                let height = parseInt(this.$refs.creeper.$el.style.height.replace("px", "")) + parseInt(paddingTop);
+            if (this.$refs.persistentbar) {
+                let height = parseInt(this.$refs.persistentbar.$el.style.height.replace("px", "")) + parseInt(paddingTop);
                 this.paddingMain = height  + "px";
             }
             return this.paddingMain;
@@ -334,7 +332,7 @@ a {
     }
 }
 
-.sitewide__creeper {
+.sitewide__persistentbar {
     text-align: center;
     justify-content: center;
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);

@@ -66,11 +66,11 @@ collections:
                     valueField: "name"
                     displayFields: ["name"]
                     default: "Black"
-      - label: "Creeper Bar"
-        name: "creeperbar"
+      - label: "Persistent Bar"
+        name: "persistentbar"
         widget: object
         fields:
-          - { label: 'Show Sitewide Creeper Bar', name: 'show_sitewide_creeper', widget: 'boolean', default: false, required: false }
+          - { label: 'Show Sitewide Persistent Bar', name: 'show_sitewide_persistent_bar', widget: 'boolean', default: false, required: false }
           - { label: 'Text', name: 'text', widget: 'string', required: false }
           - { label: 'Link', name: 'link', widget: 'string', required: false }
           - label: "Style Options"
@@ -83,8 +83,8 @@ collections:
                 widget: "select"
                 options: ["Left", "Center", "Right"]
                 default: "Center"
-              - label: "Nav Background Color"
-                name: "backgroundColor_nav"
+              - label: "Background Color"
+                name: "backgroundColor_bar"
                 hint: "Which Background Color Should Nav Bar Be?"
                 widget: "relation"
                 collection: "colors"
@@ -93,7 +93,7 @@ collections:
                 displayFields: ["name"]
                 default: "White"
               - label: "Text Color"
-                name: "color_nav"
+                name: "color_bar"
                 hint: "Which Color Should Nav Bar Text Be?"
                 widget: "relation"
                 collection: "colors"
@@ -261,8 +261,8 @@ collections:
                     options: ["Left", "Center", "Right"]
                     default: "Left"
                     required: false
-          - label: "Creeper Bar"
-            name: "creeperbar"
+          - label: "Persistent Bar"
+            name: "persistentbar"
             widget: object
             fields:
               - { label: 'Text', name: 'text', widget: 'string', required: false }
@@ -462,40 +462,6 @@ collections:
                   widget: "select"
                   options: ["text", "email", "tel", "url"]
               - {label: "Submit Button Text", name: "button_text", widget: "string"}
-
-  - name: 'themes'
-    label: 'Site Themes'
-    identifier_field: name
-    format: 'json'
-    folder: 'assets/content/themes'
-    create: true
-    slug: '{{slug}}'
-    editor:
-      preview: false
-    fields:
-      - { label: 'Name', name: 'name', hint: "Theme Name", widget: 'string' }
-      - label: "Widget Themes"
-        name: "segment"
-        widget: "list"
-        types:
-        - label: "Default Options"
-          name: "default"
-          widget: "object"
-          fields:
-            - {label: "Default Background Color", name: "backgroundColor", widget: "string", hint: "Use a color code here (e.g. #232323)", default:"#FFF", required: false}
-            - {label: "Default Text Color", name: "color", widget: "string", hint: "Use a color code here (e.g. #232323)", default:"#232323", required: false}
-        - label: "Creeper Bar Options"
-          name: "creeperbar"
-          widget: "object"
-          fields:
-            - {label: "Background Color", name: "backgroundColor", widget: "string", hint: "Use a color code here (e.g. #232323)", required: false}
-            - {label: "Text Color", name: "color", widget: "string", hint: "Use a color code here (e.g. #232323)", required: false}
-        - label: "Hero Image Banner Options"
-          name: "heroBanner"
-          widget: "object"
-          fields:
-            - {label: "Background Color", name: "backgroundColor", widget: "string", hint: "Use a color code here (e.g. #232323)", required: false}
-            - {label: "Text Color", name: "color", widget: "string", hint: "Use a color code here (e.g. #232323)", required: false}
 
   - name: 'colors'
     label: 'Site Colors'

@@ -12,8 +12,8 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_5fc574cc from 'nuxt_plugin_plugin_5fc574cc' // Source: ./vuetify/plugin.js (mode: 'all')
-import nuxt_plugin_markdownit_4d696c05 from 'nuxt_plugin_markdownit_4d696c05' // Source: ./markdown-it.js (mode: 'all')
+import nuxt_plugin_plugin_98b4ba74 from 'nuxt_plugin_plugin_98b4ba74' // Source: ./vuetify/plugin.js (mode: 'all')
+import nuxt_plugin_markdownit_7ce6904b from 'nuxt_plugin_markdownit_7ce6904b' // Source: ./markdown-it.js (mode: 'all')
 import nuxt_plugin_global_f21f4e84 from 'nuxt_plugin_global_f21f4e84' // Source: ../plugins/global.js (mode: 'all')
 import nuxt_plugin_vueplyr_a4e20576 from 'nuxt_plugin_vueplyr_a4e20576' // Source: ../plugins/vue-plyr.js (mode: 'all')
 
@@ -172,12 +172,12 @@ async function createApp (ssrContext) {
 
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_5fc574cc === 'function') {
-    await nuxt_plugin_plugin_5fc574cc(app.context, inject)
+  if (typeof nuxt_plugin_plugin_98b4ba74 === 'function') {
+    await nuxt_plugin_plugin_98b4ba74(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_markdownit_4d696c05 === 'function') {
-    await nuxt_plugin_markdownit_4d696c05(app.context, inject)
+  if (typeof nuxt_plugin_markdownit_7ce6904b === 'function') {
+    await nuxt_plugin_markdownit_7ce6904b(app.context, inject)
   }
 
   if (typeof nuxt_plugin_global_f21f4e84 === 'function') {

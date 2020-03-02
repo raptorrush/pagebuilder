@@ -2,7 +2,6 @@ export const state = () => ({
     colors: {},
     sitewide: {},
     nav: [],
-    themes: {},
     pages: {}
 });
 
@@ -43,7 +42,6 @@ function setStyles(data, colors) {
         } else { //SET PARSED STYLES
             let style = s.split("_")[0];
             let elem = s.split("_")[1];
-            // console.log(elem);
             if (elem in widg.parsedStyles) {
                 widg.parsedStyles[elem][style] = colors[styles[s]].code;
             } else if (elem) {
@@ -66,17 +64,16 @@ export const mutations = {
         state.colors = newObj;
     },
     setSitewide(state, data) {
-        data.creeperbar.classes = [];
-        data.creeperbar.parsedStyles = {};
+        data.persistentbar.classes = [];
+        data.persistentbar.parsedStyles = {};
         data.footer.classes = [];
         data.footer.parsedStyles = {};
         data.nav = {};
         data.nav.styles = data.options.nav.styles;
         data.nav.classes = [];
         data.nav.parsedStyles = {};
-        // console.log(data.creeperbar);
         data.styles = {
-            creeper: setStyles(data.creeperbar, state.colors),
+            persistentbar: setStyles(data.persistentbar, state.colors),
             footer: setStyles(data.footer, state.colors),
             nav: setStyles(data.nav, state.colors)
         }
@@ -87,23 +84,6 @@ export const mutations = {
         var populate = checkLive[0].nav_items;
         state.nav = populate;
         // console.log(data);
-    },
-    setThemes(state, data) {
-        let themes = {};
-        for (let t in data) {
-            let segments = {};
-            let theme = data[t];
-            let name = theme.name.toLowerCase();
-            theme.name = name;
-            themes[name] = theme;
-            for (let s in theme.segment) {
-                let segment = theme.segment[s];
-                segments[segment.type.toLowerCase()] = segment;
-            }
-            delete theme.segment;
-            theme.segments = segments;
-        }
-        state.themes = themes;
     },
     setPages(state, data) {
         let themes = state.themes;
@@ -117,22 +97,6 @@ export const mutations = {
             for (let w in page.widgets) {
                 let widget = page.widgets[w];
                 let type = widget.type;
-                //BELOW SETS WIDGET THEME DATA
-                // if (widget.theme) {
-                //     widget.theme = widget.theme.toLowerCase();
-                //     let theme = widget.theme;
-                //     if (themes[theme]) {
-                //         if (themes[theme].segments[widget.type]) {
-                //             widget.themedata = themes[theme].segments[widget.type];
-                //         } else {
-                //             widget.themedata = themes[theme].segments["default"];
-                //         }
-                //     }
-                // } else {
-                //     widget.theme = sitewide.theme.toLowerCase();
-                //     widget.themedata = themes[widget.theme].segments["default"];
-                // }
-
                 //BELOW SETS CLASS NAMES AND PARSED STYLES FOR WIDGETS, ETC.
                 widget.classes = [];
                 widget.classes.push(type);
@@ -171,7 +135,6 @@ export const getters = {
     colors: state => state.colors,
     sitewide: state => state.sitewide,
     nav: state => state.nav,
-    themes: state => state.themes,
     pages: state => state.pages
 };
 
@@ -200,14 +163,6 @@ export const actions = {
             return res;
         });
         await commit('setNav', d);
-
-        var datas = await require.context('~/assets/content/themes/', false, /\.json$/);
-        var d = datas.keys().map(key => {
-            let res = datas(key);
-            res.slug = key.slice(2, -5);
-            return res;
-        });
-        await commit('setThemes', d);
 
         var datas = await require.context('~/assets/content/pages/', false, /\.json$/);
         var d = datas.keys().map(key => {

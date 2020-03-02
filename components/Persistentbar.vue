@@ -1,6 +1,6 @@
 <template>  
     <v-system-bar :class="datas.classes" v-bind="setTheme">
-        <nuxt-link v-if="datas.link" :to="datas.link" class="creeper__anchor"/>
+        <nuxt-link v-if="datas.link" :to="datas.link" class="persistentbar__anchor"/>
         {{datas.text}}
     </v-system-bar>
 </template>
@@ -36,7 +36,7 @@ export default {
 .v-system-bar {
     position: relative;
 }
-.creeper__anchor {
+.persistentbar__anchor {
     position: absolute;
     top: 0;
     left: 0;

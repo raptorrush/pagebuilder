@@ -1,14 +1,4 @@
 {
-  "creeperbar": {
-    "show_sitewide_creeper": true,
-    "text": "20% Off Your Next Order!",
-    "link": "/sales",
-    "styles": {
-      "class_alignment": "Right",
-      "backgroundColor_nav": "Teal",
-      "color_nav": "White"
-    }
-  },
   "theme": "Light",
   "logo": "/img/raptor-logo-medium.png",
   "name": "Raptor Rush LLC",
@@ -29,8 +19,8 @@
     "link": "/sales",
     "styles": {
       "class_alignment": "Center",
-      "backgroundColor_bar": "White",
-      "color_bar": "Black"
+      "backgroundColor_bar": "Dark Orange",
+      "color_bar": "White"
     }
   },
   "email": "steve@steveshannonproductions.com",

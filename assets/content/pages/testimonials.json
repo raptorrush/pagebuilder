@@ -23,7 +23,10 @@
     },
     {
       "type": "textSection",
-      "content": "## Testimonials"
+      "content": "## Testimonials",
+      "styles": {
+        "color_textsection": "Dark Text Color"
+      }
     },
     {
       "type": "spacer",
@@ -38,7 +41,12 @@
     {
       "type": "cards",
       "styles": {
-        "class_max-width": "Large"
+        "class_max-width": "Large",
+        "backgroundColor_container": "White",
+        "backgroundColor_cards": "Teal",
+        "backgroundColor_button": "Orange - Dark",
+        "color_button": "Light Text Color",
+        "color_cards": "White"
       },
       "list": [
         {

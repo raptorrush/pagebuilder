@@ -18,8 +18,7 @@
                     <div v-if="sitewide.options.nav.show_logo" class="app__bar__logo__container">
                         <img :src="sitewide.logo" :alt="sitewide.name + ' Logo'" class="app__bar__logo">
                     </div>
-                    <v-toolbar-title v-if="sitewide.options.nav.show_name" v-html="sitewide.short_name">
-                    </v-toolbar-title>
+                    <h3 v-if="sitewide.options.nav.show_name" v-html="sitewide.short_name"></h3>
                 </div>
                 <ul class="nav__links__no-hambuger" v-if="!sitewide.options.nav.hamburger">
                     <nuxt-link v-for="(item, i) in nav" :key="i" :to="item.link" :style="setColors(sitewide.options.nav.styles)">
@@ -343,6 +342,15 @@ a {
     justify-content: flex-start;
     flex: 1;
     align-items: center;
+}
+.app__bar__name__container h3 {
+    margin: 0
+}
+.app__bar__name__container h3 > span {
+    font-weight: 500;
+}
+.app__bar__name__container h3 > span span {
+    font-weight: 300;
 }
 .app__bar__logo__container {
     padding: 5px;

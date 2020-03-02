@@ -23,7 +23,11 @@
     },
     {
       "type": "textSection",
-      "content": "## I Would Love To Hear From You!\n\nWhether you'd like to work together, have something that needs to be recorded, or just want to say hello, I'd love to hear from you. Let's get in touch!"
+      "content": "## I Would Love To Hear From You!\n\nWhether you'd like to work together, have something that needs to be recorded, or just want to say hello, I'd love to hear from you. Let's get in touch!",
+      "styles": {
+        "color_textsection": "White",
+        "backgroundColor_textsection": "Dark Text Color"
+      }
     },
     {
       "type": "spacer",

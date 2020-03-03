@@ -10,12 +10,12 @@
     "show_site_links": true,
     "show_social": true,
     "styles": {
-      "backgroundColor_footer": "Orange - Dark",
+      "backgroundColor_footer": "Blue - Dark",
       "color_footer": "White"
     }
   },
   "persistentbar": {
-    "show_sitewide_persistent_bar": true,
+    "show_sitewide_persistent_bar": false,
     "text": "Save 20% Now!",
     "link": "/sales",
     "styles": {

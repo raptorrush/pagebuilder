@@ -6,10 +6,12 @@
       "header_2": "Digital Improvement",
       "para": "",
       "styles": {
-        "color_header": "Light Text Color",
-        "class_alignment": "Right",
-        "class_justify-content": "Bottom",
-        "class_max-width": true
+        "color_header": "White",
+        "class_alignment": "Left",
+        "class_justify-content": "Center",
+        "class_max-width": true,
+        "backgroundColor_button": "Orange - Dark",
+        "color_button": "White"
       },
       "special": true,
       "button_text": "Reach Out",

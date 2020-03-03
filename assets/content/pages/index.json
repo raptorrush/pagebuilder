@@ -39,9 +39,10 @@
       "type": "textSection",
       "content": "## Meet Us\n\nWe're a couple of dreamers currently residing in Boise, Idaho. Our largest goal is to stop working for the man, and transition our skills into something that allows us to grow, and makes your offer the best it can be.",
       "styles": {
-        "backgroundColor_textsection": "Blue - Powder",
+        "backgroundColor_textsection": "Blue-Grey",
         "color_textsection": "White",
-        "class_text-align": "Center"
+        "class_text-align": "Center",
+        "class_max-width": "Medium"
       }
     }
   ]

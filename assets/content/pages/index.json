@@ -1,21 +1,22 @@
 {
   "name": "index",
-  "description": "Steve Shannon Productions",
+  "description": "Affiliate Management and Digital Improvement",
   "widgets": [
     {
-      "header_2": "",
+      "header_2": "Digital Improvement",
       "para": "",
       "styles": {
         "color_header": "Light Text Color",
         "class_alignment": "Right",
-        "class_justify-content": "Bottom"
+        "class_justify-content": "Bottom",
+        "class_max-width": true
       },
       "special": true,
-      "button_text": "",
+      "button_text": "Reach Out",
       "type": "heroBanner",
-      "link": "",
-      "desktop": "/img/orange_speaker_background2.jpg",
-      "header_1": "Steve Shannon Productions"
+      "link": "/contact",
+      "desktop": "/img/hero_background_2.jpg",
+      "header_1": "Affiliate Management and"
     },
     {
       "type": "spacer",

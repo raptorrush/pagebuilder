@@ -43,51 +43,6 @@
         "color_textsection": "White",
         "class_text-align": "Center"
       }
-    },
-    {
-      "type": "cards",
-      "styles": {
-        "class_alignment": "Center",
-        "class_max-width": "Medium",
-        "backgroundColor_container": "Teal",
-        "color_cards": "Dark Text Color",
-        "backgroundColor_cards": "White",
-        "backgroundColor_button": "Orange - Dark",
-        "color_button": "White",
-        "attribute_shaped": true
-      },
-      "list": [
-        {
-          "header": "Voice Over",
-          "sub_header": "",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n* Lorem ipsum dolor sit amet, consectetur adipiscing elit \n* sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "icon": "/img/radio.png",
-          "link": "/contact",
-          "button": "Contact Me"
-        },
-        {
-          "header": "Instructional Videos",
-          "sub_header": "Corporate and Small Business",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n* Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-          "icon": "/img/radio2.png",
-          "link": "/contact",
-          "button": "Contact Me"
-        },
-        {
-          "header": "Radio Imaging",
-          "sub_header": "Sub Header",
-          "link": "/contact",
-          "icon": "/img/imaging.png",
-          "content": "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n* Lorem ipsum dolor sit amet, consectetur adipiscing elit\n* Lorem ipsum dolor sit amet\n* Lorem ipsum dolor sit amet, consectetur adipiscing",
-          "button": "Contact Me"
-        }
-      ]
-    },
-    {
-      "type": "spacer",
-      "styles": {
-        "class_height": "Mega Ultra Huge"
-      }
     }
   ]
 }

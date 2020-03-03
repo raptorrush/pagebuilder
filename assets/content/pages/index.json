@@ -65,7 +65,11 @@
           "link": "audrey@raptorrush.com",
           "class_card-type": "Contact",
           "sub_sub_header": "Offer Setup and Analysis",
-          "icon": "/img/headshot-audrey-roberts.jpg"
+          "icon": "/img/headshot-audrey-roberts.jpg",
+          "styles": {
+            "class_card-type": "Contact",
+            "class_max-width": "40"
+          }
         },
         {
           "header": "Michael Roberts",
@@ -73,7 +77,11 @@
           "sub_sub_header": "Technology Support and Custom Implementations",
           "content": "Hello! I'm a Front-End Web Developer with 6+ years of experience creating code, analyzing pages, and making already good things great. I'd love to talk with you about where some of the pain points you feel online are, and what ways we can help you to start enjoying the technology side of things again.",
           "icon": "/img/headshot-michael-roberts-2.jpg",
-          "link": "michael@raptorrush.com"
+          "link": "michael@raptorrush.com",
+          "styles": {
+            "class_card-type": "Contact",
+            "class_max-width": "40"
+          }
         }
       ]
     }

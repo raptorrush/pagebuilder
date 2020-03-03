@@ -94,7 +94,7 @@
       "type": "spacer",
       "styles": {
         "class_height": "Small",
-        "class_line": true,
+        "class_line": false,
         "style_backgroundColor_line": "White",
         "style_backgroundColor_spacer": "Blue-Grey"
       }

@@ -25,7 +25,8 @@
       "content": "## Need A Little Help?\n\n## Or Maybe A Lot?\n\n## We're Here.\n\nLet us take the confusion out of managing your offers, help you take them to the next level, and do all the things that you may not have the time or specialized knowledge to do.",
       "styles": {
         "color_textsection": "Dark Text Color",
-        "class_text-align": "Center"
+        "class_text-align": "Center",
+        "class_max-width": "Medium"
       }
     },
     {

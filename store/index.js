@@ -17,22 +17,20 @@ function sortItems(data) {
     return newdata;
 }
 
-function setStyles(data, colors) {
+function setStyles(data, colors, subType) {
     let widg = data;
     let styles = data.styles;
     for (let s in styles) {
         if (s.indexOf("class_") >= 0) { //SET CLASSES
-            let style = s.split("class_")[1];
-            let type = data.type ? data.type + "--" : "";
+            let classname = s.split("class_")[1];
+            let type = data.type ? data.type + "--" : subType + "--";
             let choosen;
-            console.log(style);
             if (typeof styles[s] !== "boolean") {
                 choosen = styles[s].toLowerCase().replace(/ /g, "-");
             } else {
                 choosen = styles[s];
             }
-
-            widg.classes.push(type + style + "--" + choosen);
+            widg.classes.push(type + classname + "--" + choosen);
         } else if (s.indexOf("attribute_") >= 0) { //SET ATTRIBUTES FOR VUETIFY COMPONENTS
             let attribute = s.split("attribute_")[1];
             let choosen;
@@ -42,16 +40,17 @@ function setStyles(data, colors) {
                 choosen = styles[s];
             }
             widg.attributes[attribute] = choosen;
-        } else { //SET PARSED STYLES
+        } else if (s.indexOf("style_") >= 0) {
+
+            console.log(widg);
+            console.log(data.styles);
+        } else if (s.indexOf("_") >= 0 || s.indexOf("color_") >= 0) { //SET PARSED STYLES - SHOULD BE ALL COLORS
             let style = s.split("_")[0];
             let elem = s.split("_")[1];
             if (elem in widg.parsedStyles) {
                 widg.parsedStyles[elem][style] = colors[styles[s]].code;
-            } else if (elem) {
-                // console.log(elem);
-                // console.log(styles[s]);
+            } else if (elem && styles[s]) {
                 widg.parsedStyles[elem] = {};
-                // console.log(styles[s])
                 widg.parsedStyles[elem][style] = colors[styles[s]].code;
             }
         }
@@ -113,12 +112,11 @@ export const mutations = {
                 
                 if ("list" in widget) { //ADD NAMES HERE WHERE SUBCLASSES NEED TO BE FOUND
                     for (let l in widget.list) {
-                        
                         let indiv = widget.list[l];
                         indiv.classes = [];
                         indiv.parsedStyles = {};
                         if ("styles" in indiv) {
-                            indiv.parsedStyles = setStyles(indiv, state.colors);
+                            indiv.parsedStyles = setStyles(indiv, state.colors, type);
                         }
                         console.log(indiv);
                     }

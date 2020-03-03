@@ -461,7 +461,6 @@ collections:
                     name: "styles"
                     widget: object
                     fields:
-                      - { label: "cards", name: "classname", widget: "hidden", default: "cards", required: false }
                       - label: "Type Of Card"
                         name: "class_card-type"
                         hint: "What Type Of Card Are You Building?"
@@ -476,17 +475,20 @@ collections:
                         options: ["15", "25", "33", "40", "50", "60", "66", "75", "85", "Unlimited"]
                         default: "Small"
                         required: false
+                      - label: "Background Color - Card"
+                        name: "style_backgroundColor"
+                        hint: "Which color should the background of this card be?"
+                        widget: "relation"
+                        collection: "colors"
+                        searchFields: ["name"]
+                        valueField: "name"
+                        displayFields: ["name"]
+                        default: "Dark Text Color"
+                        required: false
               - label: "Style Options"
                 name: "styles"
                 widget: object
                 fields:
-                  - label: "Max Width Of Cards"
-                    name: "class_max-width"
-                    hint: "What percentage should cards take up in this section? Makes smaller cards, etc."
-                    widget: "select"
-                    options: ["15", "25", "33", "40", "50", "60", "66", "75", "85", "Unlimited"]
-                    default: "Small"
-                    required: false
                   - {label: "Slight Bend To Edges Of Cards", name: "attribute_shaped", widget: "boolean", default: false, required: false }
                   - label: "Background Color - Container"
                     name: "backgroundColor_container"

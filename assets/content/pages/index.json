@@ -60,6 +60,7 @@
       "list": [
         {
           "styles": {
+            "classname": "cards",
             "class_card-type": "Contact",
             "class_max-width": "40"
           },
@@ -80,6 +81,7 @@
           "icon": "/img/headshot-michael-roberts-2.jpg",
           "link": "michael@raptorrush.com",
           "styles": {
+            "classname": "cards",
             "class_card-type": "Contact",
             "class_max-width": "40"
           }

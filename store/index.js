@@ -23,13 +23,16 @@ function setStyles(data, colors) {
     for (let s in styles) {
         if (s.indexOf("class_") >= 0) { //SET CLASSES
             let style = s.split("class_")[1];
+            let type = data.type ? data.type + "--" : "";
             let choosen;
+            console.log(style);
             if (typeof styles[s] !== "boolean") {
                 choosen = styles[s].toLowerCase().replace(/ /g, "-");
             } else {
                 choosen = styles[s];
             }
-            widg.classes.push(data.type + "--" + style + "--" + choosen);
+
+            widg.classes.push(type + style + "--" + choosen);
         } else if (s.indexOf("attribute_") >= 0) { //SET ATTRIBUTES FOR VUETIFY COMPONENTS
             let attribute = s.split("attribute_")[1];
             let choosen;
@@ -45,8 +48,8 @@ function setStyles(data, colors) {
             if (elem in widg.parsedStyles) {
                 widg.parsedStyles[elem][style] = colors[styles[s]].code;
             } else if (elem) {
-                console.log(elem);
-                console.log(styles[s]);
+                // console.log(elem);
+                // console.log(styles[s]);
                 widg.parsedStyles[elem] = {};
                 // console.log(styles[s])
                 widg.parsedStyles[elem][style] = colors[styles[s]].code;
@@ -106,6 +109,21 @@ export const mutations = {
                 if (widget.styles) {
                     widget2 = setStyles(widget, state.colors);
                 }
+                //BELOW SETS SUB CLASS NAMES AND PARSED STYLES FOR INNER WIDGETS, ETC.
+                
+                if ("list" in widget) { //ADD NAMES HERE WHERE SUBCLASSES NEED TO BE FOUND
+                    for (let l in widget.list) {
+                        
+                        let indiv = widget.list[l];
+                        indiv.classes = [];
+                        indiv.parsedStyles = {};
+                        if ("styles" in indiv) {
+                            indiv.parsedStyles = setStyles(indiv, state.colors);
+                        }
+                        console.log(indiv);
+                    }
+                }
+                
                 //KEEP BELOW - CHANGES NAME OF COMPONENT TO VUE STYLE NAME
                 let componentName = widget2.type.split(" ");
                 for (let i = 0; i < componentName.length; i++) {

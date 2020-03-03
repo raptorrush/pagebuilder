@@ -2,19 +2,25 @@
     <div :class="datas.classes" class="site__hero__banner">
         <div class="banner__img__container">
             <img :src="datas.desktop" alt="" class="banner__img">
-            <nuxt-link v-if="datas.link" :to="datas.link" class="banner__link"/>
+            <nuxt-link v-if="datas.link && datas.button_text.length === 0" :to="datas.link" class="banner__link"/>
         </div>
         <div class="banner__text__container">
             <h1 v-if="datas.header_1" :style="datas.parsedStyles.header" class="banner__header--h1">
                 <span >{{ datas.header_1 }}</span>
                 <span v-if="datas.header_2">{{ datas.header_2 }}</span>
             </h1>
+            <Sitebutton v-if="datas.button_text" :text="datas.button_text" :styles="datas.parsedStyles.button" :link="datas.link" class="hero__button"/>
         </div>
     </div>
 </template>
 
 <script>
+// import Sitebutton from '~/components/Sitebutton.vue';
+
 export default {
+    // components: {
+    //     Sitebutton
+    // },
     props: {
         datas: Object,
         theme: Object
@@ -48,7 +54,7 @@ export default {
     width: 100%;
     max-width: 100%;
     height: 100%;
-    max-height: 400px;
+    max-height: 600px;
     position: relative;
 }
 .banner__img {
@@ -75,7 +81,14 @@ export default {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: 30px 50px;
+    justify-content: flex-start;
+    padding: 4vw 6vw;
+}
+.banner__header--h1 {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: center;
 }
 .heroBanner--alignment--center .banner__text__container {
     text-align: center;
@@ -98,5 +111,8 @@ export default {
 }
 .heroBanner--justify-content--bottom .banner__text__container {
     justify-content: flex-end;
+}
+.hero__button {
+    align-self: flex-start;
 }
 </style> 

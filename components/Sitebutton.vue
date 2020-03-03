@@ -1,14 +1,16 @@
-<template>  
-    <v-btn :class="datas.classes" :style="datas.styles ? datas.styles : null" v-bind="setTheme">
-        {{datas.text}}
-    </v-btn>
+<template>
+    <a class="site__button" :style="styles ? styles : null" :to="link">
+        {{text}}
+    </a>
 </template>
 
 <script>
 export default {
     props: {
         datas: Object,
-        styles: Object
+        styles: Object,
+        text: String,
+        link: String
     },
     data() {
         return {
@@ -19,22 +21,19 @@ export default {
                     "depressed": false,
                     "small": true
                 }
-                
             }
-        }
-    },
-    computed: {
-        setTheme: function () {
-            if (this.datas.special) {
-                return this.vtheme.special;
-            }
-            return this.vtheme["1"];
         }
     }
 }
 </script>
 
 <style>
-
+.site__button {
+    margin: 20px 0;
+    padding: 12px 30px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
 </style>
 

@@ -169,8 +169,8 @@ body, html {
     background-color: var(--site-white);
     scroll-behavior: smooth;
     font-family: var(--default-font);
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 18px;
+    line-height: 18px;
     letter-spacing: .05px;
 }
 body .v-application {
@@ -197,12 +197,13 @@ main {
 }
 
 .container {
-    max-width: 1300px;
-    padding: 0 0 80px;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 2100px;
 }
 
 h1 {
-    font-size: 3.4em;
+    font-size: 2.7em;
     line-height: 1em;
     font-weight: 400;
     margin: 0;
@@ -210,10 +211,10 @@ h1 {
     text-shadow: 2px 2px 1px #232323;
 }
 h2 {
-    font-size: 1.9em;
+    font-size: 2.2em;
     line-height: 1em;
-    font-weight: 500;
-    margin: 20px 0 0;
+    font-weight: 300;
+    margin: 10px 0 0;
 }
 h3 {
     font-size: 1.5em;

@@ -182,7 +182,7 @@ collections:
               - { label: 'Header - Line 1', name: 'header_1', widget: 'string', required: false, default: "Header Text Here"}
               - { label: 'Header - Line 2', name: 'header_2', widget: 'string', required: false }
               - { label: 'Para', name: 'para', widget: 'text', required: false }
-              - { label: 'Button Text', name: 'button_text', widget: 'string', required: false }
+              - { label: 'Button Text', name: 'button_text', widget: 'string', default: "", required: false }
               - { label: 'Link', name: 'link', widget: 'string', required: false }
               - { label: 'Is Hero?', name: "special", widget: "boolean", hint: "Is this banner the main header for the page?", default: true }
               - { label: 'Image - Desktop', name: 'desktop', widget: 'image', required: false }
@@ -191,6 +191,7 @@ collections:
                 name: "styles"
                 widget: object
                 fields:
+                  - { label: 'Full Width?', name: "class_max-width", widget: "boolean", hint: "Should the banner be full-width?", default: true, required: false}
                   - label: "Alignment Left/Right"
                     name: "class_alignment"
                     hint: "Where Should Text Align Horizontally?"
@@ -215,6 +216,26 @@ collections:
                     displayFields: ["name"]
                     default: "Dark Text Color"
                     required: false
+                  - label: "Button Background Color"
+                    name: "backgroundColor_button"
+                    hint: "Which Color Should Button Background Be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "White"
+                    required: false,
+                  - label: "Button Text Color"
+                    name: "color_button"
+                    hint: "Which Color Should Button Text Be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "Black"
+                    required: false
           - label: "Carousel"
             name: "carousel"
             widget: object
@@ -229,7 +250,7 @@ collections:
                 displayFields: ["name"]
                 default: "Light Theme"
                 required: false
-              - { label: 'Is Hero?', name: "special", widget: "boolean", hint: "Is this carousel the main header for the page?", default: true }
+              - { label: 'Is Hero?', name: "special", widget: "boolean", hint: "Is this carousel the main header for the page?", default: true, required: false }
               - label: "Slides"
                 name: "slides"
                 widget: "list"
@@ -324,6 +345,52 @@ collections:
                     displayFields: ["name"]
                     default: "Dark Text Color"
                     required: false
+          - label: "Side By Side"
+            name: "sidebyside"
+            widget: object
+            fields:
+              - { label: 'Header', name: 'header', widget: 'string', required: false, default: ""}
+              - { label: 'Sub Header', name: 'sub_header', widget: 'string', required: false, default: ""}
+              - { label: 'Text Content', name: 'content', widget: 'markdown', buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"], required: false }
+              - { label: 'Icon or Image', name: 'icon', widget: 'image', required: false, hint: "Icon or Image here if wanted in side." }
+              - label: "Style Options"
+                name: "styles"
+                widget: object
+                fields:
+                  - label: "Text Color"
+                    name: "color_textsection"
+                    hint: "Which color should the text of this section be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "Dark Text Color"
+                    required: false
+                  - label: "Background Color"
+                    name: "backgroundColor_textsection"
+                    hint: "Which color should the background of this section be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "Light Text Color"
+                    required: false
+                  - label: "Align Text"
+                    name: "class_text-align"
+                    hint: "Should text align Left, Right, or Center?"
+                    widget: "select"
+                    options: ["Left", "Right", "Center"]
+                    default: "Left"
+                    required: false
+                  - label: "Text Section Max-Width"
+                    name: "class_max-width"
+                    hint: "Should we make the text not be able to be so wide?"
+                    widget: "select"
+                    options: ["Small", "Medium", "Large"]
+                    default: "Large"
+                    required: false
           - label: "Text Section"
             name: "textSection"
             widget: object
@@ -353,6 +420,20 @@ collections:
                     displayFields: ["name"]
                     default: "Light Text Color"
                     required: false
+                  - label: "Align Text"
+                    name: "class_text-align"
+                    hint: "Should text align Left, Right, or Center?"
+                    widget: "select"
+                    options: ["Left", "Right", "Center"]
+                    default: "Left"
+                    required: false
+                  - label: "Text Section Max-Width"
+                    name: "class_max-width"
+                    hint: "Should we make the text not be able to be so wide?"
+                    widget: "select"
+                    options: ["Small", "Medium", "Large"]
+                    default: "Large"
+                    required: false
           - label: "Cards"
             name: "cards"
             widget: object
@@ -363,27 +444,47 @@ collections:
                 fields:
                   - { label: 'Header', name: 'header', widget: 'string', required: false, default: "Header Text Here"}
                   - { label: 'Sub Header', name: 'sub_header', widget: 'string', required: false, default: "Sub Header Text Here"}
-                  - { label: 'Text Content', name: 'content', widget: 'markdown', required: false }
-                  - { label: 'Icon', name: 'icon', widget: 'image', required: false, hint:"Optional. Icon here if wanted in card." }
+                  - { label: 'Smaller Sub Header', name: 'sub_sub_header', widget: 'string', required: false, default: "Even Smaller Sub Header Text Here"}
+                  - { label: 'Text Content', name: 'content', widget: 'markdown', buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"], required: false }
+                  - { label: 'Icon or Image', name: 'icon', widget: 'image', required: false, hint: "Optional. Icon or Image here if wanted in card at Top." }
                   - { label: 'Button Text', name: 'button', widget: 'string', required: false, hint: "If a Button is wanted, place text here."}
                   - { label: 'Link', name: 'link', widget: 'string', required: false }
-                  - label: "Audio File"
+                  - label: "Audio/Video File"
                     name: "file"
-                    hint: "Add an audio file to the card"
+                    hint: "Add an audio or video file to the card"
                     widget: "file"
                     required: false
                     media_library:
                       config:
                         multiple: false
+                  - label: "Style Options"
+                    name: "styles"
+                    widget: object
+                    fields:
+                      - { label: "cards", name: "classname", widget: "hidden", default: "cards", required: false }
+                      - label: "Type Of Card"
+                        name: "class_card-type"
+                        hint: "What Type Of Card Are You Building?"
+                        widget: "select"
+                        options: ["General", "Contact", "Media", "Baseball"]
+                        default: "General"
+                        required: false
+                      - label: "Width Of Card"
+                        name: "class_max-width"
+                        hint: "What percentage should card take up in this section? Makes smaller cards, etc."
+                        widget: "select"
+                        options: ["15", "25", "33", "40", "50", "60", "66", "75", "85", "Unlimited"]
+                        default: "Small"
+                        required: false
               - label: "Style Options"
                 name: "styles"
                 widget: object
                 fields:
                   - label: "Max Width Of Cards"
                     name: "class_max-width"
-                    hint: "What should the max-width be of cards in this section? Makes smaller cards, etc."
+                    hint: "What percentage should cards take up in this section? Makes smaller cards, etc."
                     widget: "select"
-                    options: ["Small", "Medium", "Large", "Unlimited"]
+                    options: ["15", "25", "33", "40", "50", "60", "66", "75", "85", "Unlimited"]
                     default: "Small"
                     required: false
                   - {label: "Slight Bend To Edges Of Cards", name: "attribute_shaped", widget: "boolean", default: false, required: false }

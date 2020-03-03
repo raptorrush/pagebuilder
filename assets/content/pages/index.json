@@ -62,7 +62,8 @@
           "styles": {
             "style_backgroundColor_card": "Blue-Grey",
             "class_card-type": "Contact",
-            "class_max-width": "40"
+            "class_max-width": "40",
+            "style_color_card": "White"
           },
           "sub_sub_header": "Offer Setup and Analysis",
           "sub_header": "Affiliate Management",
@@ -83,7 +84,8 @@
           "styles": {
             "style_backgroundColor_card": "Blue-Grey",
             "class_card-type": "Contact",
-            "class_max-width": "40"
+            "class_max-width": "40",
+            "style_color_card": "White"
           }
         }
       ]

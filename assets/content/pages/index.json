@@ -89,6 +89,15 @@
           }
         }
       ]
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Extra Small",
+        "class_line": false,
+        "style_backgroundColor_line": "Dark Text Color",
+        "style_backgroundColor_spacer": "Blue-Grey"
+      }
     }
   ]
 }

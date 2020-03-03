@@ -10,12 +10,6 @@
       "link": "/"
     },
     {
-      "title": "Testimonials",
-      "status": true,
-      "para": "See What People Think Of Me",
-      "link": "/testimonials"
-    },
-    {
       "title": "Contact",
       "status": true,
       "para": "Contact Me",

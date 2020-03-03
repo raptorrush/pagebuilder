@@ -476,8 +476,18 @@ collections:
                         default: "Small"
                         required: false
                       - label: "Background Color - Card"
-                        name: "style_backgroundColor"
+                        name: "style_backgroundColor_card"
                         hint: "Which color should the background of this card be?"
+                        widget: "relation"
+                        collection: "colors"
+                        searchFields: ["name"]
+                        valueField: "name"
+                        displayFields: ["name"]
+                        default: "Dark Text Color"
+                        required: false
+                      - label: "Text Color - Card"
+                        name: "style_color_card"
+                        hint: "Which color should the text of this card be?"
                         widget: "relation"
                         collection: "colors"
                         searchFields: ["name"]
@@ -491,7 +501,7 @@ collections:
                 fields:
                   - {label: "Slight Bend To Edges Of Cards", name: "attribute_shaped", widget: "boolean", default: false, required: false }
                   - label: "Background Color - Container"
-                    name: "backgroundColor_container"
+                    name: "style_backgroundColor_container"
                     hint: "Which color should the background of this whole container be?"
                     widget: "relation"
                     collection: "colors"
@@ -500,28 +510,8 @@ collections:
                     displayFields: ["name"]
                     default: "Light Text Color"
                     required: false
-                  - label: "Text Color - Cards"
-                    name: "color_cards"
-                    hint: "Which color should the text of these cards be?"
-                    widget: "relation"
-                    collection: "colors"
-                    searchFields: ["name"]
-                    valueField: "name"
-                    displayFields: ["name"]
-                    default: "Dark Text Color"
-                    required: false
-                  - label: "Background Color - Cards"
-                    name: "backgroundColor_cards"
-                    hint: "Which color should the background of these cards be?"
-                    widget: "relation"
-                    collection: "colors"
-                    searchFields: ["name"]
-                    valueField: "name"
-                    displayFields: ["name"]
-                    default: "Light Text Color"
-                    required: false
                   - label: "Background Color - Buttons"
-                    name: "backgroundColor_button"
+                    name: "style_backgroundColor_button"
                     hint: "If there is a button in the cards, which color should the background be?"
                     widget: "relation"
                     collection: "colors"
@@ -531,7 +521,7 @@ collections:
                     default: "Dark Text Color"
                     required: false
                   - label: "Text Color - Buttons"
-                    name: "color_button"
+                    name: "style_color_button"
                     hint: "If there is a button in the cards, which color should the text be?"
                     widget: "relation"
                     collection: "colors"

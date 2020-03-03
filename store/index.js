@@ -41,19 +41,27 @@ function setStyles(data, colors, subType) {
             }
             widg.attributes[attribute] = choosen;
         } else if (s.indexOf("style_") >= 0) {
-
-            console.log(widg);
-            console.log(data.styles);
-        } else if (s.indexOf("_") >= 0 || s.indexOf("color_") >= 0) { //SET PARSED STYLES - SHOULD BE ALL COLORS
-            let style = s.split("_")[0];
-            let elem = s.split("_")[1];
-            if (elem in widg.parsedStyles) {
-                widg.parsedStyles[elem][style] = colors[styles[s]].code;
-            } else if (elem && styles[s]) {
-                widg.parsedStyles[elem] = {};
-                widg.parsedStyles[elem][style] = colors[styles[s]].code;
+            let name = s.split("_")[1];
+            let type = s.split("_")[2];
+            let variable = styles[s];
+            if (type) {
+                if (name.toLowerCase().indexOf("color") >= 0) {
+                    widg.parsedStyles[type][name] = colors[variable].code;
+                } else {
+                    widg.parsedStyles[type][name] = variable;
+                }
             }
         }
+        // else if (s.indexOf("_") >= 0 || s.indexOf("color_") >= 0) { //SET PARSED STYLES - SHOULD BE ALL COLORS
+        //     let style = s.split("_")[0];
+        //     let elem = s.split("_")[1];
+        //     if (elem in widg.parsedStyles) {
+        //         widg.parsedStyles[elem][style] = colors[styles[s]].code;
+        //     } else if (elem && styles[s]) {
+        //         widg.parsedStyles[elem] = {};
+        //         widg.parsedStyles[elem][style] = colors[styles[s]].code;
+        //     }
+        // }
     }
     return widg;
 }
@@ -105,23 +113,21 @@ export const mutations = {
                 widget.parsedStyles = {};
                 widget.attributes = {};
                 let widget2 = widget;
-                if (widget.styles) {
+                if ("styles" in widget) {
                     widget2 = setStyles(widget, state.colors);
                 }
                 //BELOW SETS SUB CLASS NAMES AND PARSED STYLES FOR INNER WIDGETS, ETC.
-                
                 if ("list" in widget) { //ADD NAMES HERE WHERE SUBCLASSES NEED TO BE FOUND
                     for (let l in widget.list) {
-                        let indiv = widget.list[l];
-                        indiv.classes = [];
-                        indiv.parsedStyles = {};
-                        if ("styles" in indiv) {
-                            indiv.parsedStyles = setStyles(indiv, state.colors, type);
+                        let listitem = widget.list[l];
+                        let listitem2 = listitem;
+                        listitem.classes = [];
+                        listitem.parsedStyles = {};
+                        if ("styles" in listitem) {
+                            listitem2 = setStyles(listitem, state.colors, type);
                         }
-                        console.log(indiv);
                     }
                 }
-                
                 //KEEP BELOW - CHANGES NAME OF COMPONENT TO VUE STYLE NAME
                 let componentName = widget2.type.split(" ");
                 for (let i = 0; i < componentName.length; i++) {

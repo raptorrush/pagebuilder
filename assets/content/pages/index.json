@@ -50,17 +50,17 @@
       "styles": {
         "class_max-width": "Medium",
         "attribute_shaped": false,
-        "backgroundColor_container": "Blue-Grey",
-        "color_cards": "White",
-        "backgroundColor_cards": "Blue-Grey",
-        "backgroundColor_button": "Dark Text Color",
-        "color_button": "White",
+        "style_backgroundColor_container": "Blue-Grey",
+        "style_color_cards": "White",
+        "style_backgroundColor_cards": "Blue-Grey",
+        "style_backgroundColor_button": "Dark Text Color",
+        "style_color_button": "White",
         "class_card-type": "Contact"
       },
       "list": [
         {
           "styles": {
-            "style_backgroundColor": "Blue-Grey",
+            "style_backgroundColor_card": "Blue-Grey",
             "class_card-type": "Contact",
             "class_max-width": "40"
           },
@@ -81,7 +81,7 @@
           "icon": "/img/headshot-michael-roberts-2.jpg",
           "link": "michael@raptorrush.com",
           "styles": {
-            "style_backgroundColor": "Blue-Grey",
+            "style_backgroundColor_card": "Blue-Grey",
             "class_card-type": "Contact",
             "class_max-width": "40"
           }

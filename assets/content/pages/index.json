@@ -216,5 +216,9 @@
       }
     }
   ],
-  "title": "Home"
+  "title": "Home",
+  "seo": {
+    "title": "Home",
+    "description": "Affiliate Management and Digital Improvement"
+  }
 }

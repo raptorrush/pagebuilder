@@ -80,7 +80,11 @@
       "styles": {
         "style_backgroundColor_container": "Green - Medium",
         "style_backgroundColor_inner": "White",
-        "style_color_inner": "Dark Text Color"
+        "style_color_inner": "Dark Text Color",
+        "style_backgroundColor_inputs": "White",
+        "style_borderColor_inputs": "Blue-Grey",
+        "style_backgroundColor_button": "Orange - Dark",
+        "style_color_button": "White"
       }
     },
     {

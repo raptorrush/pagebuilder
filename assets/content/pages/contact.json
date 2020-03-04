@@ -18,8 +18,10 @@
       "type": "textSection",
       "content": "## Let's Work Together!\n\nWhether you'd like to work together, have something that needs to be setup or coded, or just want to say hello, we'd love to hear from you. Let's get in touch!",
       "styles": {
-        "color_textsection": "White",
-        "backgroundColor_textsection": "Dark Text Color"
+        "color_textsection": "Dark Text Color",
+        "backgroundColor_textsection": "White",
+        "class_text-align": "Center",
+        "class_max-width": "Medium"
       }
     },
     {

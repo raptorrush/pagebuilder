@@ -54,7 +54,7 @@
             "style_backgroundColor_button": "Dark Text Color",
             "style_color_button": "White"
           },
-          "icon": "/img/google-analytics.png",
+          "icon": "/img/googleanalytics.png",
           "link": "https://analytics.google.com/analytics/web/"
         }
       ]

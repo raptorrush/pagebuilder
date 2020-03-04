@@ -62,7 +62,7 @@
           "sub_header": "",
           "sub_sub_header": "",
           "styles": {
-            "class_card-type": "General",
+            "class_card-type": "Icons",
             "class_max-width": "Auto",
             "style_backgroundColor_card": "Transparent",
             "style_color_card": "Dark Text Color",
@@ -77,7 +77,7 @@
           "sub_header": "",
           "sub_sub_header": "",
           "styles": {
-            "class_card-type": "General",
+            "class_card-type": "Icons",
             "class_max-width": "Auto",
             "style_backgroundColor_card": "Transparent",
             "style_color_card": "Dark Text Color",

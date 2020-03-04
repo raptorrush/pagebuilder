@@ -55,6 +55,12 @@
           "type": "text"
         },
         {
+          "required": false,
+          "type": "text",
+          "text": "Your Current Website (If Applicable)",
+          "short_name": "website"
+        },
+        {
           "text": "How Can I Help? ",
           "required": false,
           "short_name": "message",

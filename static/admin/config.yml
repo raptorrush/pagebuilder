@@ -18,13 +18,21 @@ collections:
       preview: false
     fields:
       - { label: 'Company Name', name: 'name', widget: 'string' }
-      - { label: 'Shortened Company Name', name: 'short_name', widget: 'string', required: false }
+      - { label: 'Shortened Company Name', name: 'short_name', widget: 'string', default: "", required: false }
       - { label: 'Logo', name: 'logo', widget: 'image', required: false }
-      - { label: 'Address Line 1', name: 'address_line_1', widget: 'string', required: false }
-      - { label: 'Address Line 2', name: 'address_line_2', widget: 'string', required: false }
-      - { label: 'Address Line 3', name: 'address_line_3', widget: 'string', required: false }
-      - { label: 'Contact Phone Number', name: 'phone', widget: 'string', required: false }
-      - { label: 'Contact Email Address', name: 'email', widget: 'string', required: false }
+      - label: "Locations"
+        name: "locations"
+        widget: "list"
+        fields:
+          - { label: 'Name of Office', name: 'name', widget: 'string', default: "", hint:"Could be city name or a nickname, or whatever you call the office to the public.", required: false }
+          - { label: 'Address Line 1', name: 'address_line_1', widget: 'string', default: "", required: false }
+          - { label: 'Address Line 2', name: 'address_line_2', widget: 'string', default: "", required: false }
+          - { label: 'Address Line 3', name: 'address_line_3', widget: 'string', default: "", required: false }
+          - { label: 'City', name: 'city', widget: 'string', required: false, default: "" }
+          - { label: 'State', name: 'state', widget: 'string', required: false, default: ""}
+          - { label: 'Zip', name: 'zip', widget: 'string', default: "", required: false }
+          - { label: 'Contact Phone Number', name: 'phone', default: "", widget: 'string', required: false }
+          - { label: 'Contact Email Address', name: 'email', default: "", widget: 'string', required: false }
       - label: "Sitewide Options"
         name: "options"
         widget: object
@@ -172,7 +180,20 @@ collections:
       preview: false
     fields:
       - { label: 'Page Name', name: 'name', widget: 'string' }
+      - { label: 'Page Title', name: 'title', widget: 'string', required: false }
       - { label: 'Page Description', name: 'description', widget: 'text', required: false, hint: "What is the purpose of this page? This is for Search Engines."}
+      - label: "SEO Info"
+        name: "seo"
+        widget: "object"
+        fields:
+          - { label: 'Page Title', name: 'title', widget: 'string', required: false }
+          - { label: 'Page Description', name: 'description', widget: 'text', required: false, hint: "What is the purpose of this page? This is for Search Engines."}
+          - label: "Show Page To Search Engines?"
+            name: "indexfollow"
+            hint: "Should Search Engines Index and Follow this page?"
+            widget: "select"
+            options: ["index, follow", "no index, no follow"]
+            default: "index, follow"
       - label: "Page Widget"
         name: "widgets"
         widget: "list"

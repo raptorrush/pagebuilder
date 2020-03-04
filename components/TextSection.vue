@@ -49,7 +49,6 @@ export default {
 .textSection--max-width--large .page__text__section__inner {
     max-width: 1200px;
 }
-
 /* ------------------ MEDIA QUERY ------------------ */
 @media screen and (max-width: 768px) {
     .page__text__section {

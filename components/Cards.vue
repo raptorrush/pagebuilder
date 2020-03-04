@@ -1,7 +1,7 @@
 <template>
     <div :class="datas.classes" :style="datas.parsedStyles.container" class="site__cards">
         <div class="site__cards__inner">
-            <div v-for="(item, index) in datas.list" :style="item.parsedStyles.card" hover v-bind="datas.attributes" :key="item.header" :class="item.classes" class="site__card" >
+            <div v-for="(item) in datas.list" :style="item.parsedStyles.card" hover v-bind="datas.attributes" :key="item.header" :class="item.classes" class="site__card" >
                 <div class="card__header__container">
                     <div class="card__avatar" v-if="item.icon">
                         <img :src="item.icon" :alt="item.header" class="card__icon">

@@ -64,4 +64,25 @@ export default {
 .spacer--height--mega-ultra-huge {
     height: 100px;
 }
+/* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 768px) {
+    .spacer--height--extra-small {
+        height: 12px;
+    }
+    .spacer--height--small {
+        height: 22px;
+    }
+    .spacer--height--medium {
+        height: 36px;
+    }
+    .spacer--height--large {
+        height: 48px;
+    }
+    .spacer--height--extra-large {
+        height: 62px;
+    }
+    .spacer--height--mega-ultra-huge {
+        height: 80px;
+    }
+}
 </style> 

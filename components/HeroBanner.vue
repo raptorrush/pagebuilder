@@ -1,7 +1,12 @@
 <template>
     <div :class="datas.classes" class="site__hero__banner">
         <div class="banner__img__container">
-            <img :src="datas.desktop" alt="" class="banner__img">
+            <picture class="banner__img">
+                <source :srcset="datas.desktop" media="(min-width: 768px)">
+                <source :srcset="datas.mobile" media="(min-width: 300px)">
+                <img class="banner__img" :src="datas.desktop" :alt="datas.header_1"/>
+            </picture>
+            <!-- <img :src="datas.desktop" :alt="datas.header_1" class="banner__img"> -->
             <nuxt-link v-if="datas.link && datas.button_text.length === 0" :to="datas.link" class="banner__link"/>
         </div>
         <div class="banner__text__container">
@@ -80,7 +85,7 @@ export default {
     width: 100%;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: flex-start;
     padding: 4vw 6vw;
 }

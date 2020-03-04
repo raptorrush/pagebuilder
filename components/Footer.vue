@@ -15,16 +15,18 @@
                     <p v-if="datas.footer.para" class="footer__brand__para">{{ datas.footer.para }}</p>
                 </div>
                 <div class="footer__location">
-                    <div class="footer__name">
-                        <hr>
-                        <h3>BOISE</h3>
-                    </div>
-                    <div class="footer__address">
-                        <p v-if="datas.address_line_1">{{ datas.address_line_1 }}</p>
-                        <p v-if="datas.address_line_2">{{ datas.address_line_2 }}</p>
-                        <p v-if="datas.address_line_3">{{ datas.address_line_3 }}</p>
-                        <a v-if="datas.phone" :href="'tel:' + datas.phone">{{ datas.phone }}</a>
-                        <a v-if="datas.email" class="footer__email__address" :href="'mailto:' + datas.email">{{ datas.email_address }}</a>
+                    <div v-for="(location) in datas.locations" :key="location.name" class="footer__location__cell">
+                        <div class="footer__name">
+                            <hr>
+                            <h3>{{ location.name }}</h3>
+                        </div>
+                        <div class="footer__address">
+                            <p v-if="location.address_line_1">{{ location.address_line_1 }}</p>
+                            <p v-if="location.address_line_2">{{ location.address_line_2 }}</p>
+                            <p v-if="location.address_line_3">{{ location.address_line_3 }}</p>
+                            <a v-if="location.phone" :href="'tel:' + location.phone">{{ location.phone }}</a>
+                            <a v-if="location.email" class="footer__email__address" :href="'mailto:' + location.email">{{ location.email_address }}</a>
+                        </div>
                     </div>
                 </div>
             </div>

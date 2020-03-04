@@ -37,14 +37,14 @@ export default {
     head() {
         return {
             script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
-            title: "",
+            title: this.pageData.seo.title + " - " + this.sitewide.name,
             meta: [
                 { 
                     hid: 'description',
                     name: 'description',
-                    content: ""
+                    content: this.pageData.seo.description
                 },
-                { hid: 'robots', name: 'robots', content: 'index, follow' }
+                { hid: 'robots', name: 'robots', content: this.pageData.indexfollow }
             ]
         };
     },

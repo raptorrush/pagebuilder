@@ -55,7 +55,7 @@
           "type": "text"
         },
         {
-          "text": "How Can I Help?",
+          "text": "How Can I Help? ",
           "required": false,
           "short_name": "message",
           "type": "text"

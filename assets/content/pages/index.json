@@ -21,6 +21,45 @@
       "header_1": "Affiliate Management and"
     },
     {
+      "type": "cards",
+      "styles": {
+        "attribute_shaped": false,
+        "style_backgroundColor_container": "Transparent"
+      },
+      "list": [
+        {
+          "header": "ClickBank",
+          "sub_header": "",
+          "sub_sub_header": "",
+          "styles": {
+            "class_card-type": "Icons",
+            "class_max-width": "Unlimited",
+            "style_backgroundColor_card": "Transparent",
+            "style_color_card": "Dark Text Color",
+            "style_backgroundColor_button": "Dark Text Color",
+            "style_color_button": "White"
+          },
+          "icon": "/img/clickbanklogo-small.png",
+          "link": "https://www.clickbank.com"
+        },
+        {
+          "header": "Google Analytics",
+          "sub_header": "",
+          "sub_sub_header": "",
+          "styles": {
+            "class_card-type": "Icons",
+            "class_max-width": "Unlimited",
+            "style_backgroundColor_card": "Transparent",
+            "style_color_card": "Dark Text Color",
+            "style_backgroundColor_button": "Dark Text Color",
+            "style_color_button": "White"
+          },
+          "icon": "/img/google-analytics.png",
+          "link": "https://analytics.google.com/analytics/web/"
+        }
+      ]
+    },
+    {
       "type": "textSection",
       "content": "## Need A Little Help?\n\n## Or Maybe A Lot?\n\n## We're Here.\n\nLet us take the confusion out of managing your offers, help you take them to the next level, and do all the things that you may not have the time or specialized knowledge to do.",
       "styles": {

@@ -79,7 +79,8 @@
       "button_text": "Submit",
       "styles": {
         "style_backgroundColor_container": "Green - Medium",
-        "style_backgroundColor_inner": "White"
+        "style_backgroundColor_inner": "White",
+        "style_color_inner": "Dark Text Color"
       }
     },
     {

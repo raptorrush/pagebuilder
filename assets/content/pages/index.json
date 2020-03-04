@@ -93,7 +93,7 @@
           "sub_sub_header": "",
           "styles": {
             "class_card-type": "Icons",
-            "class_max-width": "Small",
+            "class_max-width": "Auto",
             "style_backgroundColor_card": "Transparent",
             "style_color_card": "Dark Text Color",
             "style_backgroundColor_button": "Dark Text Color",

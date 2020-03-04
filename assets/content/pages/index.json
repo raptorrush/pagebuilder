@@ -219,6 +219,7 @@
   "title": "Home",
   "seo": {
     "title": "Home",
-    "description": "Affiliate Management and Digital Improvement"
+    "description": "Affiliate Management and Digital Improvement",
+    "indexfollow": "index, follow"
   }
 }

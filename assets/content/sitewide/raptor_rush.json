@@ -1,17 +1,22 @@
 {
+  "zip": "83702",
   "theme": "Light",
+  "city": "Boise",
   "logo": "/img/raptor-logo-medium.png",
   "name": "Raptor Rush LLC",
   "short_name": "<span>Raptor<span>Rush",
   "phone": "208-555-5555",
-  "address_line_1": "Boise, ID",
+  "state": "ID",
+  "address_line_1": "2113 N. 15th St.",
   "address_line_2": "",
   "footer": {
     "show_site_links": true,
     "show_social": true,
     "styles": {
       "backgroundColor_footer": "Blue - Dark",
-      "color_footer": "White"
+      "color_footer": "White",
+      "style_backgroundColor_footer": "Blue - Dark",
+      "style_color_footer": "White"
     }
   },
   "persistentbar": {
@@ -24,7 +29,7 @@
       "color_bar": "Black"
     }
   },
-  "email": "steve@steveshannonproductions.com",
+  "email": "contact@raptorrush.com",
   "options": {
     "nav": {
       "hamburger": false,

@@ -1,6 +1,8 @@
 <template>
-    <div :class="datas.classes">
-        <div v-if="datas.styles.line" :style="datas.parsedStyles.line" class="spacer__line"></div>
+    <div :class="datas.classes" :style="datas.parsedStyles.spacer">
+        <div class="spacer__inner">
+            <div :style="datas.parsedStyles.line" class="spacer__line"></div>
+        </div>
     </div>
 </template>
 
@@ -15,30 +17,51 @@ export default {
 
 <style>
 .spacer {
-    width: 80%;
-    margin: 0 auto;
+    width: 100%;
     display: block;
-    height: 1px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
 }
-.spacer__line {
+.spacer__inner {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
     height: 1px;
+    position: relative;
+    flex: 1;
+}
+
+.spacer__line {
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+.spacer--line--true .spacer__line  {
+    display: block;
 }
 .spacer--height--extra-small {
-    margin: 8px auto;
+    height: 16px;
 }
 .spacer--height--small {
-    margin: 12px auto;
+    height: 24px;
 }
 .spacer--height--medium {
-    margin: 18px auto;
+    height: 36px;
 }
 .spacer--height--large {
-    margin: 22px auto;
+    height: 44px;
 }
 .spacer--height--extra-large {
-    margin: 28px auto;
+    height: 56px;
 }
 .spacer--height--mega-ultra-huge {
-    margin: 50px auto ;
+    height: 100px;
 }
 </style> 

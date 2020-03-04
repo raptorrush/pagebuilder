@@ -1,19 +1,32 @@
 import Vue from 'vue';
 
 import Carousel from '../components/Carousel.vue';
-import Divider from '../components/Divider.vue';
-import Persistentbar from '../components/Persistentbar.vue';
-import Sitebutton from '../components/Sitebutton.vue';
-import Spacer from '../components/Spacer.vue';
-import Cards from '../components/Cards.vue';
-import HeroBanner from '../components/HeroBanner.vue';
-import TextSection from '../components/TextSection.vue';
-
 Vue.component('Carousel', Carousel);
-Vue.component('Divider', Divider);
+
+import Persistentbar from '../components/Persistentbar.vue';
 Vue.component('Persistentbar', Persistentbar);
+
+import Sitebutton from '../components/Sitebutton.vue';
 Vue.component('Sitebutton', Sitebutton);
+
+import Spacer from '../components/Spacer.vue';
 Vue.component('Spacer', Spacer);
+
+import Cards from '../components/Cards.vue';
 Vue.component('Cards', Cards);
+
+import HeroBanner from '../components/HeroBanner.vue';
 Vue.component('HeroBanner', HeroBanner);
+
+import TextSection from '../components/TextSection.vue';
 Vue.component('TextSection', TextSection);
+
+import Contact from '../components/Contact.vue';
+Vue.component('Contact', Contact);
+
+
+
+
+
+
+

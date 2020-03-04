@@ -40,7 +40,7 @@ export default {
 <style>
 .site__hero__banner {
     position: relative;
-    max-width: 2100px;
+    max-width: 100%;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -54,7 +54,7 @@ export default {
     width: 100%;
     max-width: 100%;
     height: 100%;
-    max-height: 600px;
+    max-height: 800px;
     position: relative;
 }
 .banner__img {

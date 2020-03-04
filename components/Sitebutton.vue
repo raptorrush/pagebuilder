@@ -1,7 +1,7 @@
 <template>
-    <a class="site__button" :style="styles ? styles : null" :to="link">
+    <nuxt-link class="site__button" :style="styles ? styles : null" :to="link">
         {{text}}
-    </a>
+    </nuxt-link>
 </template>
 
 <script>

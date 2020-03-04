@@ -97,15 +97,17 @@ collections:
         name: "footer"
         widget: "object"
         fields:
+        - { label: 'Footer Logo', name: 'logo', widget: 'image', required: false }
+        - { label: 'Footer - Show Footer Logo', name: 'show_logo', widget: 'boolean', required: false }
         - { label: 'Footer - Show Site Links', name: 'show_site_links', widget: 'boolean', required: false }
         - { label: 'Footer - Show Social Media', name: 'show_social', widget: 'boolean', required: false }
-        - { label: 'Footer Company Description', name: 'para', widget: 'text', required: false }
+        - { label: 'Footer Short Paragraph', name: 'para', widget: 'text', required: false }
         - label: "Style Options"
           name: "styles"
           widget: object
           fields:
             - label: "Footer Background Color"
-              name: "backgroundColor_footer"
+              name: "style_backgroundColor_footer"
               hint: "Which Background Color Should Footer Be?"
               widget: "relation"
               collection: "colors"
@@ -114,7 +116,7 @@ collections:
               displayFields: ["name"]
               default: "Black"
             - label: "Text Color"
-              name: "color_footer"
+              name: "style_color_footer"
               hint: "Which Color Should Footer Text Be?"
               widget: "relation"
               collection: "colors"
@@ -184,7 +186,7 @@ collections:
               - { label: 'Para', name: 'para', widget: 'text', required: false }
               - { label: 'Button Text', name: 'button_text', widget: 'string', default: "", required: false }
               - { label: 'Link', name: 'link', widget: 'string', required: false }
-              - { label: 'Is Hero?', name: "special", widget: "boolean", hint: "Is this banner the main header for the page?", default: true }
+              - { label: 'Is Hero?', name: "special", widget: "boolean", hint: "Is this banner the main header for the page?", default: true, required: false }
               - { label: 'Image - Desktop', name: 'desktop', widget: 'image', required: false }
               - { label: 'Image - Mobile', name: 'mobile', widget: 'image', required: false }
               - label: "Style Options"
@@ -225,7 +227,7 @@ collections:
                     valueField: "name"
                     displayFields: ["name"]
                     default: "White"
-                    required: false,
+                    required: false
                   - label: "Button Text Color"
                     name: "color_button"
                     hint: "Which Color Should Button Text Be?"
@@ -310,6 +312,7 @@ collections:
                 valueField: "name"
                 displayFields: ["name"]
                 default: "Light Theme"
+                required: false
               - label: "Size"
                 name: "size"
                 widget: "select"
@@ -335,8 +338,18 @@ collections:
                     default: "Medium"
                     required: false
                   - { label: 'Show Horizontal Line', name: "class_line", widget: "boolean", hint: "Should we put a horizontal line in the middle of the spacer?", required: false, default: false }
+                  - label: "Background Color"
+                    name: "style_backgroundColor_spacer"
+                    hint: "Which background color should the spacer have?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "White"
+                    required: false
                   - label: "Line Color"
-                    name: "backgroundColor_line"
+                    name: "style_backgroundColor_line"
                     hint: "Which color should the line Be?"
                     widget: "relation"
                     collection: "colors"
@@ -442,9 +455,9 @@ collections:
                 name: "list"
                 widget: "list"
                 fields:
-                  - { label: 'Header', name: 'header', widget: 'string', required: false, default: "Header Text Here"}
-                  - { label: 'Sub Header', name: 'sub_header', widget: 'string', required: false, default: "Sub Header Text Here"}
-                  - { label: 'Smaller Sub Header', name: 'sub_sub_header', widget: 'string', required: false, default: "Even Smaller Sub Header Text Here"}
+                  - { label: 'Header', name: 'header', widget: 'string', required: false, default: "", hint: "Header Text Here"}
+                  - { label: 'Sub Header', name: 'sub_header', widget: 'string', required: false, default: "", hint: "Sub Header Text Here"}
+                  - { label: 'Smaller Sub Header', name: 'sub_sub_header', widget: 'string', required: false, default: "", hint: "Even Smaller Sub Header Text Here"}
                   - { label: 'Text Content', name: 'content', widget: 'markdown', buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list", "quote"], required: false }
                   - { label: 'Icon or Image', name: 'icon', widget: 'image', required: false, hint: "Optional. Icon or Image here if wanted in card at Top." }
                   - { label: 'Button Text', name: 'button', widget: 'string', required: false, hint: "If a Button is wanted, place text here."}
@@ -465,15 +478,15 @@ collections:
                         name: "class_card-type"
                         hint: "What Type Of Card Are You Building?"
                         widget: "select"
-                        options: ["General", "Contact", "Media", "Baseball"]
+                        options: ["General", "Contact", "Icons", "Media", "Baseball"]
                         default: "General"
                         required: false
                       - label: "Width Of Card"
                         name: "class_max-width"
                         hint: "What percentage should card take up in this section? Makes smaller cards, etc."
                         widget: "select"
-                        options: ["15", "25", "33", "40", "50", "60", "66", "75", "85", "Unlimited"]
-                        default: "Small"
+                        options: ["Auto", "15", "25", "33", "40", "50", "60", "66", "75", "85", "100"]
+                        default: "Auto"
                         required: false
                       - label: "Background Color - Card"
                         name: "style_backgroundColor_card"
@@ -483,7 +496,7 @@ collections:
                         searchFields: ["name"]
                         valueField: "name"
                         displayFields: ["name"]
-                        default: "Dark Text Color"
+                        default: "Transparent"
                         required: false
                       - label: "Text Color - Card"
                         name: "style_color_card"
@@ -495,11 +508,33 @@ collections:
                         displayFields: ["name"]
                         default: "Dark Text Color"
                         required: false
+                      - label: "Background Color - Button"
+                        name: "style_backgroundColor_button"
+                        hint: "If there is a button in the card, which color should the background be?"
+                        widget: "relation"
+                        collection: "colors"
+                        searchFields: ["name"]
+                        valueField: "name"
+                        displayFields: ["name"]
+                        default: "Dark Text Color"
+                        required: false
+                      - label: "Text Color - Button"
+                        name: "style_color_button"
+                        hint: "If there is a button in the card, which color should the text be?"
+                        widget: "relation"
+                        collection: "colors"
+                        searchFields: ["name"]
+                        valueField: "name"
+                        displayFields: ["name"]
+                        default: "White"
+                        required: false
               - label: "Style Options"
                 name: "styles"
                 widget: object
                 fields:
                   - {label: "Slight Bend To Edges Of Cards", name: "attribute_shaped", widget: "boolean", default: false, required: false }
+                  - {label: "Allow Row To Wrap - Desktop", name: "class_flex-wrap-desktop", widget: "boolean", default: false, required: false }
+                  - {label: "Allow Row To Wrap - Mobile", name: "class_flex-wrap-mobile", widget: "boolean", default: true, required: false }
                   - label: "Background Color - Container"
                     name: "style_backgroundColor_container"
                     hint: "Which color should the background of this whole container be?"
@@ -508,27 +543,7 @@ collections:
                     searchFields: ["name"]
                     valueField: "name"
                     displayFields: ["name"]
-                    default: "Light Text Color"
-                    required: false
-                  - label: "Background Color - Buttons"
-                    name: "style_backgroundColor_button"
-                    hint: "If there is a button in the cards, which color should the background be?"
-                    widget: "relation"
-                    collection: "colors"
-                    searchFields: ["name"]
-                    valueField: "name"
-                    displayFields: ["name"]
-                    default: "Dark Text Color"
-                    required: false
-                  - label: "Text Color - Buttons"
-                    name: "style_color_button"
-                    hint: "If there is a button in the cards, which color should the text be?"
-                    widget: "relation"
-                    collection: "colors"
-                    searchFields: ["name"]
-                    valueField: "name"
-                    displayFields: ["name"]
-                    default: "White"
+                    default: "Transparent"
                     required: false
           - label: "Contact Form"
             name: "contact"
@@ -538,15 +553,91 @@ collections:
                 label: 'Contact Form Item'
                 widget: "list"
                 fields:
-                - {label: "Text", name: "text", widget: "string"}
+                - {label: "Text", name: "text", widget: "string", required: false }
                 - {label: "Required Item", name: "required", widget: "boolean", default: false, required: false }
-                - {label: "Short Name", name: "short_name", widget: "string"}
+                - {label: "Short Name", name: "short_name", widget: "string", required: false }
                 - {label: "Placeholder", name: "placeholder", widget: "string", required: false}
                 - label: "Field Type"
                   name: "type"
                   widget: "select"
                   options: ["text", "email", "tel", "url"]
-              - {label: "Submit Button Text", name: "button_text", widget: "string"}
+                  default: "text"
+                  required: false
+              - {label: "Submit Button Text", name: "button_text", widget: "string", default: "Submit", required: false}
+              - label: "Style Options"
+                name: "styles"
+                widget: object
+                fields:
+                  - label: "Container - Background Color"
+                    name: "style_backgroundColor_container"
+                    hint: "Which color should the background of this whole container be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "Transparent"
+                    required: false
+                  - label: "Container - Text Color"
+                    name: "style_color_inner"
+                    hint: "Which color should the text of the form be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "Black"
+                    required: false
+                  - label: "Inner Container - Background Color"
+                    name: "style_backgroundColor_inner"
+                    hint: "Which color should the background of the form be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "Transparent"
+                    required: false
+                  - label: "Inputs - Background Color"
+                    name: "style_backgroundColor_inputs"
+                    hint: "Which color should the background of the text inputs be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "White"
+                    required: false
+                  - label: "Inputs - Border Color"
+                    name: "style_borderColor_inputs"
+                    hint: "Which color should the border of the text inputs be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "Dark Text Color"
+                    required: false
+                  - label: "Button - Background Color"
+                    name: "style_backgroundColor_button"
+                    hint: "Which color should the background of the button be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "Dark Text Color"
+                    required: false
+                  - label: "Button - Text Color"
+                    name: "style_color_button"
+                    hint: "Which color should the text of the button be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "White"
+                    required: false
 
   - name: 'colors'
     label: 'Site Colors'

@@ -35,7 +35,7 @@
                 <nuxt/>
             </v-container>
         </v-content>
-        <Footer :datas="sitewide"/>
+        <Footer :datas="sitewide" :nav="nav"/>
     </v-app>
 </template>
 
@@ -199,7 +199,7 @@ main {
 .container {
     padding: 0;
     margin: 0 auto;
-    max-width: 2100px;
+    max-width: 2600px;
 }
 
 h1 {
@@ -213,8 +213,8 @@ h1 {
 h2 {
     font-size: 2.2em;
     line-height: 1em;
-    font-weight: 300;
-    margin: 10px 0 0;
+    font-weight: 400;
+    margin: 8px 0 0;
 }
 h3 {
     font-size: 1.5em;
@@ -263,6 +263,9 @@ a {
 
 .v-navigation-drawer--open {
     display: none
+}
+.v-app-bar {
+    position: sticky !important;
 }
 
 /* ------------------ MEDIA QUERY ------------------ */

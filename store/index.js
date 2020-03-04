@@ -46,22 +46,34 @@ function setStyles(data, colors, subType) {
             let variable = styles[s];
             if (type) {
                 if (name.toLowerCase().indexOf("color") >= 0) {
-                    widg.parsedStyles[type][name] = colors[variable].code;
+                    if (type in widg.parsedStyles) {
+                        widg.parsedStyles[type][name] = colors[variable].code;
+                    } else {
+                        widg.parsedStyles[type] = {};
+                        widg.parsedStyles[type][name] = colors[variable].code;
+                    }
                 } else {
-                    widg.parsedStyles[type][name] = variable;
+                    if (type in widg.parsedStyles) {
+                        widg.parsedStyles[type][name] = variable;
+                    } else {
+                        widg.parsedStyles[type] = {};
+                        widg.parsedStyles[type][name] = variable;
+                    }
                 }
             }
+        } else if (s.indexOf("_") >= 0 || s.indexOf("color_") >= 0) { //SET PARSED STYLES - SHOULD BE ALL COLORS
+            let style = s.split("_")[0];
+            let elem = s.split("_")[1];
+            if (elem in widg.parsedStyles) {
+                widg.parsedStyles[elem][style] = colors[styles[s]].code;
+            } else if (elem && styles[s]) {
+                widg.parsedStyles[elem] = {};
+                widg.parsedStyles[elem][style] = colors[styles[s]].code;
+            }
         }
-        // else if (s.indexOf("_") >= 0 || s.indexOf("color_") >= 0) { //SET PARSED STYLES - SHOULD BE ALL COLORS
-        //     let style = s.split("_")[0];
-        //     let elem = s.split("_")[1];
-        //     if (elem in widg.parsedStyles) {
-        //         widg.parsedStyles[elem][style] = colors[styles[s]].code;
-        //     } else if (elem && styles[s]) {
-        //         widg.parsedStyles[elem] = {};
-        //         widg.parsedStyles[elem][style] = colors[styles[s]].code;
-        //     }
-        // }
+        if (s.indexOf("-type") >= 0) {
+            widg.eltype = styles[s];
+        }
     }
     return widg;
 }

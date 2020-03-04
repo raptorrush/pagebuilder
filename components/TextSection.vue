@@ -22,7 +22,7 @@ export default {
 .page__text__section__inner {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 60px 50px 40px;
+    padding: 60px 50px 50px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;

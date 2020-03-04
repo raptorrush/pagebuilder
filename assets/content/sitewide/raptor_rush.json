@@ -40,5 +40,18 @@
         "color": "Black"
       }
     }
-  }
+  },
+  "locations": [
+    {
+      "zip": "83702",
+      "city": "Boise",
+      "name": "Boise",
+      "phone": "208-794-9008",
+      "state": "ID",
+      "address_line_1": "2113 N. 15th St.",
+      "address_line_2": "",
+      "address_line_3": "",
+      "email": "contact@raptorrush.com"
+    }
+  ]
 }

@@ -97,5 +97,9 @@
       }
     }
   ],
-  "title": "Contact Us"
+  "title": "Contact Us",
+  "seo": {
+    "title": "Contact Us",
+    "description": "Need some work done? Contact us and let's get to work!"
+  }
 }

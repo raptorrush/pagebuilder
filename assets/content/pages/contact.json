@@ -1,40 +1,25 @@
 {
   "name": "contact",
-  "description": "Need some work done? Contact me and let's get to work!",
+  "description": "Need some work done? Contact us and let's get to work!",
   "widgets": [
     {
       "type": "heroBanner",
-      "header_1": "Contact Me",
+      "header_1": "Contact Us",
       "special": true,
       "styles": {
         "class_alignment": "Left",
         "class_justify-content": "Bottom",
-        "color_header": "Light Text Color"
+        "color_header": "Light Text Color",
+        "backgroundColor_button": "Blue-Grey"
       },
-      "desktop": "/img/orange_speaker_background.jpg"
-    },
-    {
-      "type": "spacer",
-      "styles": {
-        "class_height": "Large",
-        "class_line": false,
-        "backgroundColor_line": "Dark Text Color"
-      }
+      "desktop": "/img/hero_background_3.jpg"
     },
     {
       "type": "textSection",
-      "content": "## I Would Love To Hear From You!\n\nWhether you'd like to work together, have something that needs to be recorded, or just want to say hello, I'd love to hear from you. Let's get in touch!",
+      "content": "## Let's Work Together!\n\nWhether you'd like to work together, have something that needs to be setup or coded, or just want to say hello, we'd love to hear from you. Let's get in touch!",
       "styles": {
         "color_textsection": "White",
         "backgroundColor_textsection": "Dark Text Color"
-      }
-    },
-    {
-      "type": "spacer",
-      "styles": {
-        "class_height": "Medium",
-        "class_line": false,
-        "backgroundColor_line": "Dark Text Color"
       }
     },
     {

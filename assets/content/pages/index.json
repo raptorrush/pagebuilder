@@ -86,6 +86,21 @@
           },
           "icon": "/img/google-optimize.png",
           "link": "https://optimzie.google.com"
+        },
+        {
+          "header": "Click Funnels",
+          "sub_header": "",
+          "sub_sub_header": "",
+          "styles": {
+            "class_card-type": "Icons",
+            "class_max-width": "Small",
+            "style_backgroundColor_card": "Transparent",
+            "style_color_card": "Dark Text Color",
+            "style_backgroundColor_button": "Dark Text Color",
+            "style_color_button": "White"
+          },
+          "icon": "/img/clickfunnels-logo.png",
+          "link": "https://www.clickfunnels.com"
         }
       ]
     },

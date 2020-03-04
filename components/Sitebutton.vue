@@ -34,6 +34,7 @@ export default {
     border-radius: 4px;
     text-transform: uppercase;
     cursor: pointer;
+    text-decoration: none;
 }
 </style>
 

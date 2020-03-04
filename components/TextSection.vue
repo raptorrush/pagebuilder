@@ -17,7 +17,6 @@ export default {
 .page__text__section {
     width: 100%;
     margin: 0 auto;
-    
 }
 .page__text__section__inner {
     max-width: 1300px;

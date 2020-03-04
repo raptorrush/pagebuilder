@@ -47,19 +47,19 @@ export default {
     display: block;
 }
 .spacer--height--extra-small {
-    height: 16px;
+    height: 20px;
 }
 .spacer--height--small {
-    height: 24px;
+    height: 32px;
 }
 .spacer--height--medium {
-    height: 36px;
+    height: 46px;
 }
 .spacer--height--large {
-    height: 44px;
+    height: 58px;
 }
 .spacer--height--extra-large {
-    height: 56px;
+    height: 76px;
 }
 .spacer--height--mega-ultra-huge {
     height: 100px;

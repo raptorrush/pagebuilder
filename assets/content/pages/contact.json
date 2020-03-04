@@ -27,7 +27,7 @@
     {
       "type": "spacer",
       "styles": {
-        "class_height": "Large",
+        "class_height": "Extra Large",
         "class_line": false,
         "style_backgroundColor_line": "Green - Medium",
         "style_backgroundColor_spacer": "Green - Medium"
@@ -90,7 +90,7 @@
     {
       "type": "spacer",
       "styles": {
-        "class_height": "Large",
+        "class_height": "Extra Large",
         "class_line": false,
         "style_backgroundColor_line": "Dark Text Color",
         "style_backgroundColor_spacer": "Green - Medium"

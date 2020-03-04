@@ -56,6 +56,36 @@
           },
           "icon": "/img/googleanalytics.png",
           "link": "https://analytics.google.com/analytics/web/"
+        },
+        {
+          "header": "Has Offers (TUNE)",
+          "sub_header": "",
+          "sub_sub_header": "",
+          "styles": {
+            "class_card-type": "General",
+            "class_max-width": "Auto",
+            "style_backgroundColor_card": "Transparent",
+            "style_color_card": "Dark Text Color",
+            "style_backgroundColor_button": "Dark Text Color",
+            "style_color_button": "White"
+          },
+          "icon": "/img/hasofferslogo-small1.png",
+          "link": "https://www.tune.com"
+        },
+        {
+          "header": "Google Optimize",
+          "sub_header": "",
+          "sub_sub_header": "",
+          "styles": {
+            "class_card-type": "General",
+            "class_max-width": "Auto",
+            "style_backgroundColor_card": "Transparent",
+            "style_color_card": "Dark Text Color",
+            "style_backgroundColor_button": "Dark Text Color",
+            "style_color_button": "White"
+          },
+          "icon": "/img/google-optimize.png",
+          "link": "https://optimzie.google.com"
         }
       ]
     },

@@ -8,7 +8,7 @@
       "special": true,
       "styles": {
         "class_alignment": "Left",
-        "class_justify-content": "Bottom",
+        "class_justify-content": "Center",
         "color_header": "Light Text Color",
         "backgroundColor_button": "Blue-Grey"
       },

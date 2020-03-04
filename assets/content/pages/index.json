@@ -24,7 +24,9 @@
       "type": "cards",
       "styles": {
         "attribute_shaped": false,
-        "style_backgroundColor_container": "Blue - Light"
+        "style_backgroundColor_container": "Blue - Light",
+        "class_flex-wrap-desktop": false,
+        "class_flex-wrap-mobile": true
       },
       "list": [
         {

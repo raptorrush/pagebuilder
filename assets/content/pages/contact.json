@@ -100,6 +100,7 @@
   "title": "Contact Us",
   "seo": {
     "title": "Contact Us",
-    "description": "Need some work done? Contact us and let's get to work!"
+    "description": "Need some work done? Contact us and let's get to work!",
+    "indexfollow": "index, follow"
   }
 }

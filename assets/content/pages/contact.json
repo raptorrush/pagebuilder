@@ -67,7 +67,10 @@
           "type": "text"
         }
       ],
-      "button_text": "Submit"
+      "button_text": "Submit",
+      "styles": {
+        "style_backgroundColor_container": "Green - Medium"
+      }
     }
   ]
 }
